@@ -1,5 +1,6 @@
 name: MeriLogros
 version: 1.0
+author: Abortos
 main: es.meriland.Main
 api-version: 1.14
 commands:

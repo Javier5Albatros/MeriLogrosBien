@@ -32,13 +32,5 @@ public class TestCommand implements CommandExecutor {
 	}
 	
 	
-	public static int slabs(Player p, Material material) {
-		if(Tag.SLABS.isTagged(material)) {
-			for(material : Material.lis)
-			
-		}
-		int i = p.getStatistic(Statistic.MINE_BLOCK, Material.getMaterial("a"));
-		return i;
-	}
 
 }

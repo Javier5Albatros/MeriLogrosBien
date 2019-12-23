@@ -1,7 +1,10 @@
 package es.meriland.commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.Statistic;
+import org.bukkit.Tag;
 import org.bukkit.advancement.Advancement;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,11 +22,23 @@ public class TestCommand implements CommandExecutor {
 		if(cmd.getName().equalsIgnoreCase("test")) {
 			Player p = (Player)sender;
 			Advancement logro = Bukkit.getAdvancement(NamespacedKey.minecraft("story/root"));
+			Material material = null;
+			int i = p.getStatistic(Statistic.MINE_BLOCK, material);
 			if(p.getAdvancementProgress(logro).isDone())sender.sendMessage("si");
 			else sender.sendMessage("no");
 			
 		}
 		return true;
+	}
+	
+	
+	public static int slabs(Player p, Material material) {
+		if(Tag.SLABS.isTagged(material)) {
+			for(material : Material.lis)
+			
+		}
+		int i = p.getStatistic(Statistic.MINE_BLOCK, Material.getMaterial("a"));
+		return i;
 	}
 
 }

@@ -6,6 +6,6 @@ api-version: 1.14
 commands:
    logro:
       usage: /<command>
-      aliases: [logros, logrados]
+      aliases: [logros, logrados, logrete]
    test:
       usage: /<command>

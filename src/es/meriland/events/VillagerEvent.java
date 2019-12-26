@@ -26,7 +26,7 @@ public class VillagerEvent implements Listener {
 				NamespacedKey meriland = new NamespacedKey(plugin, "meriland");
 				Advancement logro = Bukkit.getAdvancement(meriland.minecraft("a/a"));
 					
-					if(Logros.tiempoHoras(p, 1, Statistic.PLAY_ONE_MINUTE) && !p.getAdvancementProgress(logro).isDone()) {
+					if(Logros.tiempoHoras(p, 600, Statistic.PLAY_ONE_MINUTE) && !p.getAdvancementProgress(logro).isDone()) {
 						p.sendMessage("Logro concedido!");
 						Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" <user> only meriland:meriland/veterano");
 					}
@@ -58,7 +58,7 @@ public class VillagerEvent implements Listener {
 					}
 				
 				
-					else if(Logros.numeroItems(p, Material.GOLDEN_CARROT) == 2304) {
+					else if(Logros.numeroItems(p, Material.GOLDEN_CARROT) >= 2304) {
 						p.sendMessage("Zipchu guapo");
 						Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/zipchu");
 					}
@@ -75,7 +75,7 @@ public class VillagerEvent implements Listener {
 						Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/xray");
 					}
 				
-					else if(Logros.entidadesMatadas(p, EntityType.ENDERMAN)>=40000 && p.getStatistic(Statistic.ITEM_ENCHANTED) >=1000) {
+					else if(Logros.entidadesMatadas(p, EntityType.ENDERMAN)>=40000 && p.getStatistic(Statistic.ITEM_ENCHANTED) >=1000) { //PENDIENTE DE MONTAR
 						p.sendMessage("Tas enfermo");
 						Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/encantador");
 					}

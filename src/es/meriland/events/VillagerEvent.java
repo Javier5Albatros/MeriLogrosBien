@@ -2,9 +2,7 @@ package es.meriland.events;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 import org.bukkit.Statistic;
-import org.bukkit.advancement.Advancement;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -23,10 +21,8 @@ public class VillagerEvent implements Listener {
 
 				Player p = (Player)event.getPlayer();
 				event.setCancelled(true);
-				NamespacedKey meriland = new NamespacedKey(plugin, "meriland");
-				Advancement logro = Bukkit.getAdvancement(meriland.minecraft("a/a"));
 					
-					if(Logros.tiempoHoras(p, 600, Statistic.PLAY_ONE_MINUTE) && !p.getAdvancementProgress(logro).isDone()) {
+					if(Logros.tiempoHoras(p, 600, Statistic.PLAY_ONE_MINUTE)) {
 						p.sendMessage("Logro concedido!");
 						Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" <user> only meriland:meriland/veterano");
 					}

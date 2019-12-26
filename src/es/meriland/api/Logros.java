@@ -70,6 +70,10 @@ public class Logros {
         AdvancementProgress progress = player.getAdvancementProgress(a);
         return progress.isDone();
     }
+    
+    public static void concederLogro(Player p, String logro) {
+    	Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only "+logro);
+    }
 
 	
 	

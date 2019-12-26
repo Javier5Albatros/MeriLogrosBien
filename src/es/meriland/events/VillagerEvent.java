@@ -5,11 +5,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 
-import es.meriland.Main;
 import es.meriland.api.Logros;
 
 public class VillagerEvent implements Listener {
-	Main plugin;
 	
 	@EventHandler
 	public void onClick(PlayerInteractEntityEvent event) {

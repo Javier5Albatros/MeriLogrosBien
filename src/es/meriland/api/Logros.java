@@ -64,7 +64,7 @@ public class Logros {
 	
     public static boolean hasAdvancement(Player player, String name) {
         Advancement a = getAdvancement(name);
-        if(a == null){
+        if(a == null) {
             return false;
         }
         AdvancementProgress progress = player.getAdvancementProgress(a);
@@ -78,120 +78,134 @@ public class Logros {
 	
 	public static void darLogros(Player p) {
 		
-		
-		if(!hasAdvancement(p, "meriland:meriland/veterano")) {
+		if(!hasAdvancement(p, "meriland:meriland/veterano")) {//600
 			if(tiempoHoras(p, 600, Statistic.PLAY_ONE_MINUTE)) {
 				p.sendMessage("Logro concedido!1");
 				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/veterano");
-				
+				return;
 			}
 		}
 		
-		else if(!hasAdvancement(p, "meriland:meriland/veterano")) {
-			if(tiempoHoras(p, 600, Statistic.PLAY_ONE_MINUTE)) {
-				p.sendMessage("Logro concedido!1");
-				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/veterano");
-				
+		if(!hasAdvancement(p, "meriland:meriland/")) {//2000
+			if(tiempoHoras(p, 2000, Statistic.PLAY_ONE_MINUTE)) {
+				p.sendMessage("Logro concedido!2");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+ " only meriland:meriland/");
+				return;
 			}
 		}
 		
-		
-		
-		if(tiempoHoras(p, 600, Statistic.PLAY_ONE_MINUTE)) {
-			p.sendMessage("Logro concedido!1");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/veterano");
-			
+		if(!hasAdvancement(p, "meriland:meriland/fosil")) {//4000
+			if(tiempoHoras(p, 4000, Statistic.PLAY_ONE_MINUTE)) {
+				p.sendMessage("Logro concedido!");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+ " only meriland:meriland/fosil");
+				return;
+			}
 		}
 
-	
-	
-		if(tiempoHoras(p, 24, Statistic.SNEAK_TIME)) {
-			p.sendMessage("Logro concedido!");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/shift");
-			
+		if(!hasAdvancement(p, "meriland:meriland/shift")) {
+			if(tiempoHoras(p, 24, Statistic.SNEAK_TIME)) {
+				p.sendMessage("Logro concedido!");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/shift");
+				return;
+			}
 		}
-	
-	
-		if(tiempoHoras(p, 2000, Statistic.PLAY_ONE_MINUTE)) {
-			p.sendMessage("Logro concedido!2");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+ " only meriland:meriland/adiccion");
-		}
-	
-	
-		if(tiempoHoras(p, 4000, Statistic.PLAY_ONE_MINUTE)) {
-			p.sendMessage("Logro concedido!");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+ " only meriland:meriland/fosil");
+
+		if(!hasAdvancement(p, "meriland:meriland/markankaro")) {
+			if(numeroItems(p, Material.DIAMOND) >=640 || (numeroItems(p, Material.DIAMOND_BLOCK) == 71 && numeroItems(p, Material.DIAMOND) >=1) || numeroItems(p, Material.DIAMOND_BLOCK)>=72) {
+				p.sendMessage("Markankaro es tuyo");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant " +p.getName()+ " only meriland:meriland/markankaro");
+				return;
+			}
 		}
 		
-	
-		if(numeroItems(p, Material.DIAMOND) >=640 || (numeroItems(p, Material.DIAMOND_BLOCK) == 71 && numeroItems(p, Material.DIAMOND) >=1) || numeroItems(p, Material.DIAMOND_BLOCK)>=72) {
-			p.sendMessage("Markankaro es tuyo");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant " +p.getName()+ " only meriland:meriland/markankaro");
-			i+=1;
-		}
-	
-	
-		if(numeroItems(p, Material.GOLDEN_CARROT) >= 2304) {
-			p.sendMessage("Zipchu guapo");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/zipchu");
-			i+=1;
-		}
-	
-	
-		if(bloquesVolados(p)>=500000) {
-			p.sendMessage("Buen volador");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/80dias");
-			i+=1;
-		} 
-	
-	
-		if(bloquesMinados(p, Material.DIAMOND_ORE) >=1024) {
-			p.sendMessage("Buen xray");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/xray");
-			i+=1;
-		}
-	
-		if(entidadesMatadas(p, EntityType.ENDERMAN)>=40000 && p.getStatistic(Statistic.ITEM_ENCHANTED) >=1000) { 
-			p.sendMessage("Tas enfermo");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/encantador");
-		}
-	
-	
-		if(entidadesMatadas(p, EntityType.ENDER_DRAGON)>=149) {
-			p.sendMessage("Matadragonas");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:mobteca/149");
+		if(!hasAdvancement(p, "meriland:meriland/zipchu")) {
+			if(numeroItems(p, Material.GOLDEN_CARROT) >= 2304) {
+				p.sendMessage("Zipchu guapo");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/zipchu");
+				return;
+			}
 		}
 		
-		if(p.getStatistic(Statistic.BELL_RING)>= 1000000) {
-			p.sendMessage("Buen campanero");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/bell");
+		if(!hasAdvancement(p, "meriland:meriland/80dias")) {
+			if(bloquesVolados(p)>=500000) {
+				p.sendMessage("Buen volador");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/80dias");
+				return;
+			}
+		}
+		
+		if(!hasAdvancement(p, "meriland:meriland/xray")) {
+			if(bloquesMinados(p, Material.DIAMOND_ORE) >=1024) {
+				p.sendMessage("Buen xray");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/xray");
+				return;
+			}
+		}
+		
+		if(!hasAdvancement(p, "meriland:meriland/encantador")) {
+			if(entidadesMatadas(p, EntityType.ENDERMAN)>=40000 && p.getStatistic(Statistic.ITEM_ENCHANTED) >=1000) { 
+				p.sendMessage("Tas enfermo");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/encantador");
+				return;
+			}
+		}
+		
+		if(!hasAdvancement(p, "meriland:mobteca/149")) {
+			if(entidadesMatadas(p, EntityType.ENDER_DRAGON)>=149) {
+				p.sendMessage("Matadragonas");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:mobteca/149");
+				return;
+			}
+		}
+		
+		if(!hasAdvancement(p, "meriland:meriland/bell")) {
+			if(p.getStatistic(Statistic.BELL_RING)>= 1000000) {
+				p.sendMessage("Buen campanero");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/bell");
+				return;
+			}
+		}
+		
+		if(!hasAdvancement(p, "meriland:meriland/jesus")) {
+			if(p.getStatistic(Statistic.WALK_ON_WATER_ONE_CM)/100 >= 6000) {
+				p.sendMessage("Ave cristo");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/jesus");
+				return;
+			}
 		}
 	
-		if(p.getStatistic(Statistic.WALK_ON_WATER_ONE_CM)/100 >= 6000) {
-			p.sendMessage("Ave cristo");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/jesus");
+		if(!hasAdvancement(p, "meriland:meriland/insomnio")) {
+			if(tiempoHoras(p, 456, Statistic.TIME_SINCE_DEATH) && tiempoHoras(p, 456, Statistic.TIME_SINCE_REST)) {
+				p.sendMessage("Vete al psiquiatra");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/insomnio");
+				return;
+			}
 		}
 		
-		if(tiempoHoras(p, 456, Statistic.TIME_SINCE_DEATH) && tiempoHoras(p, 456, Statistic.TIME_SINCE_REST)) {
-			p.sendMessage("Vete al psiquiatra");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/insomnio");
+		if(!hasAdvancement(p, "meriland:mobteca/raid200")) {
+			if(p.getStatistic(Statistic.RAID_WIN)>=200) {
+				p.sendMessage("Aczino draids");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:mobteca/raid200");
+				return;
+			}
 		}
 		
-		if(p.getStatistic(Statistic.RAID_WIN)>=200) {
-			p.sendMessage("Aczino draids");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:mobteca/raid200");
+		if(!hasAdvancement(p, "meriland:meriland/porky")) {
+			if(p.getStatistic(Statistic.PIG_ONE_CM)/100 >= 10000) {
+				p.sendMessage("Vaya cerdaco");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/porky");
+				return;
+			}
 		}
 		
-		if(p.getStatistic(Statistic.PIG_ONE_CM)/100 >= 10000) {
-			p.sendMessage("Vaya cerdaco");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/porky");
+		if(!hasAdvancement(p, "meriland:meriland/farlands")) {
+			if ((p.getStatistic(Statistic.WALK_ONE_CM)/100 + p.getStatistic(Statistic.SPRINT_ONE_CM)/100) >=36000000) {
+				p.sendMessage("Vaya patas");
+				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/farlands");
+				return;
+			}
 		}
-		
-		if ((p.getStatistic(Statistic.WALK_ONE_CM)/100 + p.getStatistic(Statistic.SPRINT_ONE_CM)/100) >=36000000) {
-			p.sendMessage("Vaya patas");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/farlands");
-		}
-		
+		p.sendMessage("No logro");
 		
 	}
 	

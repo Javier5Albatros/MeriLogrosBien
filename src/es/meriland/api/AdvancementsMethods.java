@@ -31,7 +31,7 @@ public class AdvancementsMethods {
     }
     
     public static void concederLogro(Player p, String logro) {
-    	Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only "+logro);
+    	Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:"+logro);
     }
 
 }

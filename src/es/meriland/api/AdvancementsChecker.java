@@ -14,7 +14,7 @@ public class AdvancementsChecker {
 	public static void veterano(Player p) {
 		if(AdvancementsStats.tiempoHoras(p, 600, Statistic.PLAY_ONE_MINUTE)) {
 			p.sendMessage("Logro concedido!1");
-			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+" only meriland:meriland/veterano");
+			AdvancementsMethods.concederLogro(p, "meriland/veterano");
 			return;
 		}
 	}

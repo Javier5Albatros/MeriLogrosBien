@@ -7,7 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.CraftItemEvent;
 
-import es.meriland.api.Logros;
+import es.meriland.api.AdvancementsMethods;
 
 
 public class CraftEvent
@@ -21,10 +21,10 @@ public class CraftEvent
 		  Player p = (Player)e.getWhoClicked();
 		  switch (e.getRecipe().getResult().getType()) {
 		  
-		  case SHULKER_BOX: Logros.concederLogro(p, "meriland:meriland/dora");
+		  case SHULKER_BOX: AdvancementsMethods.concederLogro(p, "meriland:meriland/dora");
 		  break;
 		  
-		  case CAKE: Logros.concederLogro(p, "cake");
+		  case CAKE: AdvancementsMethods.concederLogro(p, "cake");
 		  break;
 		  
 		  default:

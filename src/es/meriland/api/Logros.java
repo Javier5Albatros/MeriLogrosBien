@@ -1,7 +1,5 @@
 package es.meriland.api;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Statistic;
 import org.bukkit.entity.Player;
 
 import es.meriland.Main;
@@ -17,12 +15,8 @@ public class Logros {
 			AdvancementsChecker.veterano(p);
 		}
 		
-		if(!AdvancementsMethods.hasAdvancement(p, "meriland:meriland/")) {//2000
-			if(AdvancementsStats.tiempoHoras(p, 2000, Statistic.PLAY_ONE_MINUTE)) {
-				p.sendMessage("Logro concedido!2");
-				Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+ " only meriland:meriland/");
-				return;
-			}
+		if(!AdvancementsMethods.hasAdvancement(p, "meriland:meriland/adiccion")) {//2000
+			AdvancementsChecker.adiccion(p);
 		}
 		
 		if(!AdvancementsMethods.hasAdvancement(p, "meriland:meriland/fosil")) {//4000

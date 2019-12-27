@@ -19,6 +19,14 @@ public class AdvancementsChecker {
 		}
 	}
 	
+	public static void adiccion(Player p) {
+		if(AdvancementsStats.tiempoHoras(p, 2000, Statistic.PLAY_ONE_MINUTE)) {
+			p.sendMessage("Logro concedido!2");
+			Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "advancement grant "+p.getName()+ " only meriland:meriland/adiccion");
+			return;
+		}
+	}
+	
 	public static void fosil(Player p) {
 		if(AdvancementsStats.tiempoHoras(p, 4000, Statistic.PLAY_ONE_MINUTE)) {
 			p.sendMessage("Logro concedido!");

@@ -21,14 +21,14 @@ public class CraftEvent
 		  Player p = (Player)e.getWhoClicked();
 		  switch (e.getRecipe().getResult().getType()) {
 		  
-		  case SHULKER_BOX: AdvancementsMethods.concederLogro(p, "meriland:meriland/dora");
+		  case PURPLE_SHULKER_BOX: if(!AdvancementsMethods.hasAdvancement(p, "meriland/dora")) AdvancementsMethods.concederLogro(p, "meriland/dora");
 		  break;
 		  
-		  case CAKE: AdvancementsMethods.concederLogro(p, "cake");
+		  case CAKE: if(!AdvancementsMethods.hasAdvancement(p, "meriland/cake")) AdvancementsMethods.concederLogro(p, "meriland/cake");
 		  break;
 		  
-		  default:
-		  break;
+		  default: 
+			  break;
 		  }
 	  }
   }

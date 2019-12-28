@@ -22,7 +22,7 @@ public class TestCommand implements CommandExecutor {
 			Player p = (Player)sender;
 			if(args.length == 2) {
 				try {
-					p.setStatistic(getStat(args[0]), Integer.parseInt(args[1]));
+					p.incrementStatistic(getStat(args[0]), Integer.parseInt(args[1]));
 					p.sendMessage(ChatColor.GREEN+"Estadística "+args[0]+" cambiada correctamente a "+args[1]+".");
 				} catch(Exception e) {
 					sender.sendMessage(ChatColor.RED+"Asegurate de haber hecho /test <estadística> <nivel>");
@@ -30,7 +30,7 @@ public class TestCommand implements CommandExecutor {
 			} else if (args.length == 3) {
 				if(EnumUtils.isValidEnum(Material.class, args[1])) {
 					try {
-						p.setStatistic(getStat(args[0]), material(args[1]), Integer.parseInt(args[2]));
+						p.incrementStatistic(getStat(args[0]), material(args[1]), Integer.parseInt(args[2]));
 						p.sendMessage(ChatColor.GREEN+"Estadística "+args[0]+" del material "+args[1]+" cambiada correctamente a "+args[2]+".");
 					} catch (Exception e) {
 						sender.sendMessage(ChatColor.RED+"Asegurate de que has escogido una estadística aplicable a un material.");
@@ -38,7 +38,7 @@ public class TestCommand implements CommandExecutor {
 
 				} else if (EnumUtils.isValidEnum(EntityType.class, args[1])){
 					try {
-						p.setStatistic(getStat(args[0]), entity(args[1]), Integer.parseInt(args[2]));
+						p.incrementStatistic(getStat(args[0]), entity(args[1]), Integer.parseInt(args[2]));
 						p.sendMessage(ChatColor.GREEN+"Estadística "+args[0]+" de la entidad "+args[1]+" cambiada correctamente a "+args[2]+".");
 					} catch(Exception e) {
 						sender.sendMessage(ChatColor.RED+"Asegurate de que has escogido una estadística aplicable a una entidad.");

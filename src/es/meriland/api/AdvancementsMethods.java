@@ -22,7 +22,7 @@ public class AdvancementsMethods {
 	
 	
     public static boolean hasAdvancement(Player player, String name) {
-        Advancement a = getAdvancement(name);
+        Advancement a = getAdvancement("meriland:"+name);
         if(a == null) {
             return false;
         }
